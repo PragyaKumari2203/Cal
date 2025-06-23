@@ -1,84 +1,141 @@
-html,body{
+html, body {
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(to right top, #69696d, #79797d, #89898d, #99999d, #aaaaae);
+  background-color: #1c1c1c;
+  color: #d6d6ff;
+  font-family: Arial, sans-serif;
 }
 
-h1{
+h1 {
   text-align: center;
   color: transparent;
   -webkit-background-clip: text;
-  background-image: linear-gradient(to right top, #050637, #201b65, #462a95, #7436c5, #a93ff4);
+  background-image: linear-gradient(to right top, #06085b, #20197e, #462a95, #7436c5, #a93ff4);
+  font-size: 2.5rem;
+  padding: 1rem 0;
 }
 
-.container{
-  background-image: linear-gradient(to right top, #050637, #201b65, #462a95, #7436c5, #a93ff4);
-  height: 95vh;
-  width: 35%;
-  margin: auto;
+.container {
+  background: linear-gradient(to bottom right, #4b0082, #3d0060, #2a003f);
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  margin: 2rem auto;
+  padding: 1rem;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 2px 2px 20px ;
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.7);
 }
 
-.input{
-  height: 25%;
+/* Input Section */
+.input {
   width: 100%;
 }
 
-.buttons{
-  display: flex;
-  flex-direction: column;
-  margin-top: 5%;
-  padding: 6% 3%;
-}
-.row{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20%;
-  padding: 2%;
-  /* gap: 5%; */
-}
-
-.inputText{
-  height: 50%;
-  width: 80%;
-  border-radius:5px ;
-  border: none;
-  margin: 3% auto;
+.inputText {
+  width: 90%;
+  height: 80px;
+  font-size: 2rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  padding: 1rem;
   text-align: right;
-  font-size: 3rem;
-  padding: 2rem;
-  background-color: rgb(35, 35, 35);
+  background-color: #232323;
   color: white;
+  border: none;
   box-shadow: 2px 2px 20px rgb(166, 160, 160);
 }
- 
-.btn{
-  height:45px;
-  width:20%;
-  /* background-color: yellow; */
-  padding: 1.3%;
-  margin:0 2%;
+
+/* Buttons Layout */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  flex: 1 1 20%;
+  height: 50px;
+  font-size: 1.2rem;
   border-radius: 50%;
   box-shadow: -2px -2px 10px black;
+  background-color: #311b53;
+  color: #e8e0ff;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
   cursor: pointer;
-  font-weight: 40px;
-} 
-
-.btn:hover,.inputText:hover{
-box-shadow: -1px -1px 10px rgb(66, 0, 128);
-font-size:1.8rem ;
+  transition: all 0.2s ease;
 }
 
-.operator{
-  color:yellow ;
+.btn:hover, .inputText:hover {
+  font-size: 1.3rem;
+  box-shadow: 0 0 10px #673ab7;
 }
-.equal{
-  color: rgb(255, 85, 0);
+
+/* Operators */
+.operator {
+  color: yellow;
+  background-color: #6a00b5;
+}
+
+.operator:hover {
+  box-shadow: 0 0 10px #8e24aa;
+}
+
+/* Media Queries */
+
+/* For tablets */
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+    padding: 1rem;
+  }
+
+  .inputText {
+    height: 60px;
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
+
+/* For phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    width: 95%;
+    padding: 0.8rem;
+  }
+
+  .inputText {
+    height: 50px;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+  }
+
+  .btn {
+    height: 42px;
+    font-size: 1rem;
+    margin: 2% 1%;
+    border-radius: 40%;
+  }
+
+  .row {
+    gap: 0.5rem;
+  }
 }
